@@ -33,7 +33,15 @@ The dashboard focuses on:
 
 ## Data Source
 
-COVID-19 data based on publicly available datasets from Our World in Data (OWID).
+COVID-19 data was derived from publicly available datasets provided by Our World in Data (OWID).
+
+Source repository:
+https://github.com/owid/covid-19-data
+
+Primary dataset used during preprocessing:
+https://catalog.ourworldindata.org/garden/covid/latest/compact/compact.csv
+
+The repository includes only processed and lightweight datasets required for the dashboard experience.
 
 ## Analytical Notes
 
