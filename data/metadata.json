@@ -1,0 +1,18 @@
+{
+  "source": "Our World in Data COVID Dataset - compact CSV",
+  "start_date": "2020-01-01",
+  "generated_files": [
+    "covid_dashboard.csv",
+    "covid_latest.csv",
+    "covid_temporal_tracks.json"
+  ],
+  "notes": [
+    "Global country coverage was preserved.",
+    "Monthly snapshots were generated for front-end performance.",
+    "Monthly new cases, deaths, and vaccinations were aggregated as monthly sums.",
+    "Cumulative metrics use the latest available value within each month.",
+    "Trend status is a derived visual indicator based on recent case evolution, not a clinical risk model.",
+    "CSV files simulate Spotfire analytical tables.",
+    "JSON file simulates an endpoint consumed by a custom JSViz/Text Area component."
+  ]
+}

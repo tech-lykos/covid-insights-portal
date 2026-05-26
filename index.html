@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>COVID-19 Global Insights Portal</title>
+
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot"></script>
+</head>
+
+<body>
+
+  <header class="topbar">
+  <button id="themeToggle" class="theme-icon-btn" title="Toggle theme">
+    🌙
+  </button>
+
+  <div class="topbar-main">
+    <div>
+      <h1>COVID-19 Global Insights Portal</h1>
+      <p>Dashboard prototype</p>
+    </div>
+  </div>
+
+  <div class="dashboard-toolbar">
+    <div class="selected-country-control">
+      <span id="selectedCountryLabel" class="selected-country-label">
+        Global view
+      </span>
+
+      <button id="clearCountryFilter" class="clear-country-filter" type="button">
+        Clear
+      </button>
+    </div>
+
+    <div class="global-mode-toggle" id="modeToggle">
+      <span>Data mode</span>
+      <button class="mode-btn active" data-mode="new">New</button>
+      <button class="mode-btn" data-mode="cumulative">Cumulative</button>
+    </div>
+  </div>
+</header>
+
+  <main class="dashboard"><section class="kpi-row">
+  <div class="kpi-card">
+    <span id="kpiCasesTitle" class="kpi-title">Latest Monthly Cases</span>
+    <span class="kpi-value" id="kpiCases">--</span>
+  </div>
+
+  <div class="kpi-card">
+    <span id="kpiVaccinatedTitle" class="kpi-title">Latest Monthly Vaccinations</span>
+    <span class="kpi-value" id="kpiVaccinated">--</span>
+  </div>
+
+  <div class="kpi-card">
+    <span id="kpiCountriesTitle" class="kpi-title">Countries Tracked</span>
+    <span class="kpi-value" id="kpiCountries">--</span>
+  </div>
+
+  <div class="kpi-card">
+    <span id="kpiPeakTitle" class="kpi-title">Peak Monthly Wave</span>
+    <span class="kpi-value" id="kpiPeak">--</span>
+  </div>
+</section>
+
+<section class="panel map-panel">
+  <div class="panel-header">
+    <div>
+      <h2>Global Map</h2>
+      <p class="panel-subtitle">Click a country to filter · Enable explore mode to zoom and pan</p>
+    </div>
+
+    <button id="mapExploreToggle" class="map-explore-toggle" type="button" title="Enable map explore mode">
+      🔍
+    </button>
+  </div>
+
+  <div id="mapChart"></div>
+</section>
+
+<section class="analysis-grid">
+  <div class="panel evolution-panel">
+    <div class="panel-header">
+      <h2>Global Evolution</h2>
+
+      <div class="chart-controls">
+        <div class="metric-toggle" id="metricToggle">
+          <button class="metric-btn active" data-metric="cases">Cases</button>
+          <button class="metric-btn" data-metric="vaccinations">Vaccinations</button>
+          <button class="metric-btn" data-metric="deaths">Deaths</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="evolutionChart"></div>
+  </div>
+
+  <div class="panel context-panel">
+    <div class="panel-header">
+      <h2>Epidemiological Context Analysis</h2>
+    </div>
+
+    <div id="comparisonChart"></div>
+  </div>
+</section>
+
+<section class="panel temporal-panel">
+  <div class="panel-header">
+    <div>
+      <h2>Temporal Tracks</h2>
+      <p class="panel-subtitle">Change temporal granularity for all the dashboard</p>
+    </div>
+  </div>
+
+  <div class="temporal-layout">
+    <aside class="temporal-controls">
+      <span class="temporal-controls-title">Time granularity</span>
+
+      <button class="temporal-granularity-btn active" data-granularity="year">
+        Year
+      </button>
+
+      <button class="temporal-granularity-btn" data-granularity="semester">
+        Semester
+      </button>
+
+      <button class="temporal-granularity-btn" data-granularity="quarter">
+        Quarter
+      </button>
+
+      <button class="temporal-granularity-btn" data-granularity="month">
+        Month
+      </button>
+      
+      <div class="temporal-period-section">
+        <span class="temporal-controls-title">Period filter</span>
+        <span id="temporalPeriodContext" class="temporal-period-context"></span>
+        <div id="temporalPeriodOptions" class="temporal-period-options"></div>
+      </div>
+      
+      <button id="clearTemporalFilters" class="temporal-clear-btn">
+        Clear temporal filters
+      </button>
+      </aside>
+      
+      <div id="temporalTracks"></div>
+      </div>
+      </section>
+      </main>
+
+<script src="js/charts.js"></script>
+<script src="js/map.js"></script>
+<script src="js/temporal-tracks.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
